@@ -4,12 +4,6 @@ import time
 import math
 import pytest
 
-@pytest.fixture()
-def browser():
-    browser = webdriver.Chrome()
-    yield browser
-    browser.quit()
-
 @pytest.mark.parametrize('number', ["236895", "236896", "236897", "236898", "236899", "236903", "236904", "236905"])
 def test_correct_answer_in_the_field(browser, number):
     link = f"https://stepik.org/lesson/{number}/step/1"
